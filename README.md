@@ -12,7 +12,7 @@ Before running the project, make sure you have the following installed:
 1. Clone the repository:
    ```bash
    git clone https://github.com/Cofio17/PopArtWebPage.git
-   cd PopArtWebPage
+   cd PopArtWebPage-main
 2. Install all dependencies:
     ```bash
    npm install
