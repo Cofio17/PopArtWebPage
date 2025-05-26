@@ -87,14 +87,24 @@ section {
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden !important;
+    
   }
 
 
 
 
   h2 {
-    font-size: 4rem;
+    font-size: 5.5rem;
     margin-bottom: 1.5rem;
+
+  @media screen and (max-width:$md) {
+       font-size: 5rem;
+    }
+
+    @media screen and (max-width:$sm) {
+       font-size: 4rem;
+    }
   }
 
   @media screen and (max-width:$sm) {
@@ -169,6 +179,8 @@ section {
   }
 
   clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+  
+  
 
   &::before {
     content: "";
@@ -227,10 +239,10 @@ main {
 
 .pattern {
   position: absolute;
-  opacity: 0.6;
 
   @media screen and (max-width: $sm) {
     scale: 0.6;
+    opacity: 0.3;
   }
 
   &.left-indent {
@@ -253,16 +265,54 @@ main {
     top: 5%;
   }
 
+  &.top-8 {
+    top: 8%;
+  }
+
   &.top-10 {
     top: 10%;
   }
+    &.top-15 {
+    top: 15%;
+  }
+
+    &.top-17 {
+    top: 17%;
+  }
+
+    &.top-20 {
+    top: 20%;
+  }
+
 
   &.top-25 {
     top: 25%;
   }
 
+    &.top-27 {
+    top: 27%;
+  }
+
+
   &.top-30 {
     top: 30%;
+  }
+
+  &.top-35 {
+    top: 35%;
+  }
+
+  &.top-36 {
+    top: 36%;
+  }
+
+  &.top-38 {
+    top: 38%;
+  }
+
+
+   &.top-40 {
+    top: 40%;
   }
 
   &.top-40 {
@@ -281,12 +331,25 @@ main {
     top: 55%;
   }
 
+  &.top-63 {
+    top: 63%;
+  }
+
   &.top-65 {
     top: 65%;
   }
 
   &.top-70 {
     top: 70%;
+  }
+
+   &.top-75 {
+    top: 75%;
+  }
+
+
+   &.top-77 {
+    top: 77%;
   }
 
   &.top-90 {
@@ -296,6 +359,10 @@ main {
   &.opacity-03 {
     opacity: 0.3;
   }
+}
+
+.margin-top{
+  margin-top: 20px;
 }
 
 .svg-wrapper {
@@ -373,6 +440,8 @@ header {
   align-items: center;
   padding: 15px;
   z-index: 20;
+  padding-left:70px;
+  padding-right:70px;
 
   .logo-image-container {
     flex: 1;
@@ -436,6 +505,9 @@ header {
     //sm header{}
     overflow: visible;
     height: auto;
+    padding-left:15px;
+  padding-right:15px;
+    
 
     ul {
       position: fixed;
@@ -456,7 +528,7 @@ header {
         height: 100px;
         top: 75px;
         overflow: auto;
-        width: 100%;
+        width: 99%;
         text-align: center;
         left: 0;
         z-index: 1000;
@@ -581,6 +653,7 @@ aside {
   position: fixed;
   @include flex-column($gap: 1rem);
   right: 0;
+  margin-right: 10px;
   top: 200px;
   max-height: calc(100vh - 200px);
   z-index: 1000;
@@ -622,11 +695,11 @@ aside {
       }
 
       &:hover {
-        transform: translateX(-60px);
+        transform: translateX(-40px);
         padding-right: 100%;
 
         i {
-          transform: translateX(-60px);
+          transform: translateX(-55px);
         }
 
         span {
@@ -663,37 +736,86 @@ aside {
   align-self: center;
   justify-self: center;
   text-align: center;
-  gap: 2rem;
+  gap: 3rem;
   margin-top: 50px;
   overflow: hidden;
+  padding-top: 130px;
+  padding-bottom: 100px;
 
   h1 {
     font-size: 6rem;
+    text-align: left;
+    word-spacing: 15px;
   }
 
   #geo-2 {
     position: absolute;
-    bottom: -10%;
+    bottom: 10%;
     margin-bottom: 50px;
     padding-bottom: 20px;
+    left: 30%;
   }
 
+  #geo-12{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 1%;
+    left: 50%;
+    animation: rotate 7s linear infinite;
+  }
+
+  #geo-14{
+    bottom:0;
+    left: 47%;
+    transform: translate(-50%, -50%);
+  }
+
+     @media screen and (max-width: 1810px) {
+   
+
+    h1 {
+      font-size: 5rem;
+    }
+
+  
+  }
+
+   @media screen and (max-width: 1500px) {
+   
+
+    h1 {
+      font-size: 4.5rem;
+    }
+
+  
+  }
   @media screen and (max-width: $md) {
     padding-bottom: 10px;
 
     h1 {
-      font-size: 3rem;
+      font-size: 4rem;
     }
 
     #geo-1 {
       position: absolute;
       bottom: -60px;
     }
+
+  #geo-14{
+    bottom:0;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    height: 40px;
+    width: 40px;
+  }
+
   }
 
   @media screen and (max-width: $sm) {
     margin: 50px 0;
     width: 100%;
+    padding-top: 0;
 
     h1 {
       font-size: 3rem;
@@ -726,13 +848,50 @@ aside {
 }
 
 #btn-join {
-  @include button();
+  @include button($width: 180px, $padding: 20px);
 
   span {
     font-size: 1rem;
     font-weight: bolder;
   }
 }
+
+.btn-wrapper{
+  transition: all 0.3s ease;
+  &:hover{
+    scale: 0.95;
+  }
+}
+
+// .btn-wrapper {
+//   position: relative;
+//   display: inline-block;
+//   overflow: hidden; 
+// }
+
+// .btn-wrapper::before {
+//   content: "";
+//   position: absolute;
+//   height: 100%;
+//   width: 0%;
+//   left: 0;
+//   top: 0;
+//   z-index: 1;
+//   transition: all 0.3s ease;
+//   background-color: $primary-500;
+//   clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+// }
+
+// .btn-wrapper:hover::before {
+//   width: 100%;
+// }
+
+// #btn-join-svg {
+//   display: block;
+//   &:hover{
+//     background-color: $primary-500;
+//   }
+// }
 
 #btn-join-com {
   @include button($width: 200px, $padding: 12px);
@@ -741,17 +900,29 @@ aside {
 .btn-text-container {
   @include flex-row();
   position: relative;
-  width: 40%;
+  width: 44%;
   align-items: flex-start;
   align-self: flex-end;
   text-align: left;
   gap: 10px;
   margin-bottom: 50px;
 
+  p{
+    display: inline-block;
+    width: 100%;
+    font-size: 1.5rem;
+    text-transform: none;
+    margin-bottom: 7px;
+    p{
+      width: 100%;
+    }
+  }
+
   .sestougao-blag-container {
     position: absolute;
     bottom: -50px;
-    left: 30%;
+    left:0;
+    z-index: -1;
 
 
     @media screen and (max-width: $sm) {
@@ -766,8 +937,7 @@ aside {
   }
 
   .sestougao-blag-container {
-    bottom: -30px;
-    left: 50%;
+    left: 45%;
   }
 }
 
@@ -788,11 +958,11 @@ aside {
 .programming-image-container {
   position: relative;
   justify-self: center;
-  width: 70%;
+  width: 80%;
   margin: 100px auto;
   height: 800px;
-  max-height: 700px;
-
+  max-height: 830px;
+  margin-top: 0;
   display: block;
   opacity: 0;
   scale: 0.3;
@@ -801,6 +971,7 @@ aside {
 
   @media screen and (max-width:$sm) {
     margin-top: 0;
+    margin-bottom: 0;
   }
 
 
@@ -824,11 +995,7 @@ aside {
   }
 
   #geo-3 {
-    left: 50%;
-    transform: translateX(-50%);
-    top: -100px;
     transition: transform 0.1s ease;
-
   }
 
   .point {
@@ -919,17 +1086,19 @@ aside {
   max-width: 1350px;
   align-self: center;
   justify-self: center;
+  gap: 100px;
 
   h2 {
-    font-size: 4rem;
+    // font-size: 5rem;
   }
 
   div:first-of-type {
     @include flex-column($flexwrap: nowrap, $gap: 1rem);
-    width: 50%;
+    width: 60%;
+    margin-top: 150px;
 
     p {
-      font-size: 22px;
+      font-size: 25px;
       text-align: left;
     }
   }
@@ -954,6 +1123,7 @@ aside {
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
+    gap: 50px;
 
     div:first-of-type {
       width: 100%;
@@ -1024,36 +1194,60 @@ aside {
 }
 
 #section-items-container {
+  margin-bottom: 280px;
+  overflow: visible;
+  #geo-15{
+    right: 20px;
+    animation: rotate 7s linear infinite;
+    top: 5px;
+    z-index: -1;
+  }
+
+  #geo-16{
+    bottom: -30%;
+    left: -17%;
+  }
+ 
+    @media screen and (max-width: 1750px) {
+    #geo-16{
+      left: 0;
+    }
+  }
 
   @media screen and (max-width: $sm) {
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 140px;
   }
 }
 
 .section-items {
-  @include flex-row($gap: 20px);
+  @include flex-row($gap: 40px 20px);
   justify-content: space-between;
 
   h3 {
-    font-size: 1.6rem;
+    font-size: 2.1rem;
     font-weight: 700;
+     text-transform: none;
+     font-weight: 600;
+     word-spacing: 5px;
+
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
   }
 
   .section-item {
-    @include flex-column($gap: 10px);
-    width: 25%;
-    margin: 20px 10px;
+    @include flex-column($gap: 2rem);
+    width: 27%;
+    margin: 20px 0px;
     opacity: 0;
     transition: all 0.3s ease;
     scale: 0.3;
     transform: translateY(70px);
-
+    
 
     &.slide-in-section {
       opacity: 1;
@@ -1081,9 +1275,16 @@ aside {
   left: 29%;
   animation: rotate 10s linear infinite;
   z-index: -1;
+  height: 40px;
+  
+  img{
+    height: 100%;
+    width: 100%;
+  }
 
   @media screen and (max-width:$sm) {
     opacity: 0.4;
+    bottom: 42%;
   }
 }
 
@@ -1092,6 +1293,11 @@ aside {
   left: 27%;
   animation: rotateReverse 10s linear infinite;
   z-index: -1;
+
+  img{
+    height: 100%;
+    width: 100%;
+  }
 
   @media screen and (max-width:$sm) {
     bottom: 40%;
@@ -1105,7 +1311,7 @@ aside {
 
 #geo-12 {
   right: 0;
-  top: 10%;
+  top: 27%;
 
   img {
     width: 100%;
@@ -1123,7 +1329,7 @@ aside {
 
 #geo-13 {
   right: 20%;
-  top: 13%;
+  top: 30%;
 
 
   @media screen and (max-width:1500px) {
@@ -1139,12 +1345,22 @@ aside {
 
 #founder-section {
   @include flex-row($gap: 40px);
-  overflow: hidden;
+  overflow: visible;
+  margin-bottom:250px;
+
+  #arrowNew{
+      top: -50px;
+      left: 51%;
+  }
+
+   #geo-17{
+    bottom: -25%;
+    right: 0;
+  }
 
   figure {
     img {
       border-radius: 5px;
-
     }
   }
 
@@ -1163,11 +1379,15 @@ aside {
     #geo-7 {
       right: -10px;
       animation: rotate 10s linear infinite;
+      height: 55px;
+      bottom: 40px;
+      right: 20px;
     }
 
     #geo-8 {
-      bottom: 30px;
+      bottom: 0;
       animation: rotateReverse 10s linear infinite;
+      height: 75px;
     }
 
     #geo-7,
@@ -1188,11 +1408,11 @@ aside {
       #geo-8,
       #geo-7 {
         right: 10%;
-        bottom: -30%;
+        bottom: -50%;
       }
 
       #geo-8 {
-        bottom: -35%;
+        bottom: -40%;
         right: 5%;
       }
     }
@@ -1201,30 +1421,43 @@ aside {
   }
 
   .founder-section-text {
-    width: 40%;
+    width: 57%;
     margin-top: 3rem;
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
 
       @media screen and (max-width:1200px) {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
       }
     }
 
 
     blockquote {
       margin-top: 2rem;
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      img{
+        height: 38px;
+        width: 53px;
+      }
+
+      @media screen and (max-width:$sm) {
+        display: block;
+      }
     }
 
     h3 {
       text-transform: none;
       font-size: 3rem;
+      word-spacing: 10px;
     }
 
     h5 {
       font-size: 2rem;
       text-transform: none;
+      font-weight: 500;
     }
 
     @media screen and (max-width:$md) {
@@ -1245,6 +1478,7 @@ aside {
 
   @media screen and (max-width:$sm) {
     justify-content: center;
+    margin-bottom: 100px;
   }
 
 }
@@ -1260,11 +1494,32 @@ aside {
 }
 
 #contributors-section {
+  margin-bottom: 250px;
+
+  #co-founder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   h2 {
     word-wrap: break-word;
   }
 
-  @media screen and (max-width:$sm) {}
+  h4{
+    font-size: 1.7rem;
+  }
+
+  h5{
+    font-size: 1.5rem;
+  }
+  h5,h4{
+    text-transform: none;
+     font-weight: 500;
+  }
+  @media screen and (max-width:$sm) {
+     margin-bottom: 125px;
+  }
 }
 
 .image-container {
@@ -1273,7 +1528,9 @@ aside {
 
 .people-list {
   @include flex-row($gap: 150px);
+  gap: 70px 150px;
   justify-content: space-evenly;
+  margin-bottom: 70px;
 
   .person {
 
@@ -1284,6 +1541,8 @@ aside {
 
     img {
       transition: all 0.25s ease;
+      height: 250px;
+      width: 250px;
 
       &:hover {
         scale: 0.9;
@@ -1307,7 +1566,6 @@ aside {
   opacity: 1;
   transform: translateY(0);
   scale: 1;
-
 }
 
 
@@ -1401,7 +1659,7 @@ aside {
 
   h2 {
     word-break: normal;
-    font-size: 3rem;
+    // font-size: 4rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
@@ -1418,11 +1676,20 @@ aside {
   }
 
   #geo-9 {
-    right: 0;
+    left: 67%;
     animation: rotate 10s linear infinite;
+    top: 30px;
+    height: 50px;
+
+   @media screen and (max-width: $md) {
+      top: 15px;
+      z-index: -1;
+      left: 50%;
+
+    }
 
     @media screen and (max-width: $sm) {
-      top: 15px;
+      top: 50px;
       z-index: -1;
 
     }
@@ -1433,6 +1700,12 @@ aside {
     z-index: -1;
     top: -5%;
     animation: rotateReverse 10s linear infinite;
+    transition: all 0.3s ease;
+
+     @media screen and (max-width: 1600px) {
+     left: -5%;
+     opacity: 0.4;
+    }
 
     @media screen and (max-width: $sm) {
       top: -10%;
@@ -1443,6 +1716,10 @@ aside {
   }
 
   @media screen and (max-width: $sm) {
+
+    h2{
+      font-size: 3rem;
+    }
     width: 90vw;
     margin: 150px auto;
   }
@@ -1455,10 +1732,31 @@ aside {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 10px;
+  margin-top: 250px;
+  overflow: visible;
+
+  #geo-20{
+    left: 65%;
+    top: -50px;
+    z-index: -1;
+    height: 30px;
+  }
+
+   #geo-21{
+    right: -150px;
+    top: -230px;
+    z-index: -1;
+    height: 70px;
+  }
 
   h2 {
     display: inline-block;
-    padding-left: 15px;
+   
+    // font-size: 5rem;
+  }
+
+  @media screen and (max-width:$sm) {
+     margin-top: 100px;
   }
 }
 
@@ -1475,13 +1773,35 @@ aside {
 .news-article {
   @include flex-column($gap: 20px);
   cursor: pointer;
-  width: 40%;
+  width: 42%;
+ 
+  span{
+     text-transform: uppercase;
+  }
+
+  img{
+    width: 100%;
+  }
+
+  h3{
+    font-size: 2.2rem;
+    text-transform: none;
+    
+  }
+
+  p{
+    font-size: 22px;
+  }
 
   img {
     max-width: 100%;
     transition: all 0.3s ease;
 
 
+  }
+
+  time{
+    font-size: 1.5rem;
   }
 
   &:hover {
@@ -1514,7 +1834,7 @@ aside {
   position: relative;
   display: inline-block;
   width: 120px;
-  height: 34px;
+  height: 45px;
   color: $primary;
   text-decoration: none;
   overflow: hidden;
@@ -1529,7 +1849,6 @@ aside {
 
 .text {
   z-index: 1;
-  text-decoration: underline;
 }
 
 .arrow {
@@ -1558,6 +1877,40 @@ footer {
   justify-content: space-around;
   align-items: center;
 
+  .footer-inner{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 200px;
+
+     @media screen and (max-width:1550px) {
+      gap: 140px;
+    }
+
+    @media screen and (max-width:$sm) {
+        gap: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+
+  .logo-image-container{
+    height: 55px;
+   
+
+    @media screen and (min-width:$sm) {
+    position: relative;
+    top: -20px;
+    left: 100px;
+    }
+    
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  }
+
   ul {
     list-style: none;
 
@@ -1568,32 +1921,43 @@ footer {
 
   .socials {
     @include flex-row($gap: 20px);
-    width: 120px;
+    width: 70px;
     justify-content: center;
 
     li {
       a {
-        font-size: 30px;
+        font-size: 18px;
+        img{
+          height: 18px;
+          width: 18px;
+        }
       }
     }
   }
 
   .footer-nav {
-    @include flex-column($gap: 5px);
-    text-align: center;
+    @include flex-column($gap: 15px);
+    text-align: left;
+    font-size: 1.5rem;
+
+    @media screen and (max-width:$sm) {
+      text-align: center;
+    }
   }
 
   .pattern-arrow-wrapper {
     @include flex-column($gap: 20px);
 
-
-
+     @media screen and (min-width:$sm) {
+      position: relative;
+      right: 100px;
+    }
   }
 
   #geo-11 {
     position: absolute;
-    left: 5%;
-    top: 0;
+    left: 7%;
+    top: -20%;
     animation: rotate 10s linear infinite;
   }
 
@@ -1617,6 +1981,16 @@ footer {
 
 #socials-patterns {
   margin-bottom: 0 !important;
+  margin-top: 150px;
+  overflow: visible;
+  #geo-19{
+    right: 0;
+    top: -250px;
+  }
+  #geo-18{
+    right: 30%;
+    top: -50px;
+  }
 
   h2 {
     max-width: 1350px;
@@ -1661,10 +2035,11 @@ footer {
     }
 
     #discord-pattern {
-      bottom: 15%;
+      bottom: 0%;
       width: $discord-width;
-      left: 2%;
+      left: 3%;
       transition: all 0.3s ease;
+      
     }
 
     #github-pattern {
@@ -1681,22 +2056,22 @@ footer {
     #quora-pattern {
       width: $quora-width;
       margin-left: calc($github-width + $discord-width + ($stack-width/2));
-      top: calc(30% + 250px + 2%);
+      top: calc(30% + 250px);
     }
 
     #reddit-pattern {
       width: $reddit-width;
-      margin-left: calc($github-width + $discord-width + ($stack-width/2) + $quora-width);
+      margin-left: calc($github-width + $discord-width + ($stack-width/2) + $quora-width - 8px);
       top: calc(30% + 250px + 6%);
     }
 
     #youtube-pattern {
       width: $youtube-width;
       margin-left: calc($github-width + $discord-width + ($stack-width/2) + $quora-width + ($reddit-width/2));
-      top: calc(30% + 110px);
+      top: calc(30% + 120px);
     }
 
-    @media screen and (max-width:1500px) {
+    @media screen and (max-width:1700px) {
       #discord-pattern {
         width: calc($discord-width * $scale20);
 
@@ -1729,6 +2104,50 @@ footer {
       #youtube-pattern {
         width: calc($youtube-width * $scale20);
         margin-left: calc(($github-width + $discord-width + ($stack-width/2) + $quora-width + ($reddit-width/2))*$scale20 - 100px);
+
+      }
+    }
+
+
+    //height of screen adjustments
+     @media screen and (max-height:800px) {
+      #discord-pattern {
+        width: calc($discord-width * $scale20);
+        bottom: -7%;
+
+      }
+
+      #github-pattern {
+
+        width: calc($github-width * $scale20);
+        margin-left: $discord-width * $scale20 - 20px ;
+      }
+
+      #stack-overflow-pattern {
+        width: calc($stack-width * $scale20);
+        margin-left: calc(($github-width + $discord-width - 20px)*$scale20);
+        top: 50%;
+
+      }
+
+      #quora-pattern {
+        width: calc($quora-width * $scale20);
+        margin-left: calc(($github-width + $discord-width + ($stack-width/2)) * $scale20 - 40px);
+        top: 85.5%;
+
+      }
+
+      #reddit-pattern {
+        width: calc($reddit-width * $scale20);
+        margin-left: calc(($github-width + $discord-width + ($stack-width/2) + $quora-width - 40px)* $scale20);
+        top: 85%;
+
+      }
+
+      #youtube-pattern {
+        width: calc($youtube-width * $scale20);
+        margin-left: calc(($github-width + $discord-width + ($stack-width/2) + $quora-width + ($reddit-width/2))*$scale20 - 50px);
+        top: 59%;
 
       }
     }
@@ -1787,5 +2206,16 @@ footer {
 
   to {
     opacity: 1;
+  }
+}
+
+
+#footer-text{
+  position: absolute;
+  bottom: 20px;
+  font-size: 2rem;
+
+  @media screen and (max-width:$sm) {
+    display: none;
   }
 }
