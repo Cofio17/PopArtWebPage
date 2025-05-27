@@ -781,6 +781,16 @@ aside {
   
   }
 
+     @media screen and (max-width: 1550px) {
+   
+
+    h1 {
+      font-size: 4.5rem;
+    }
+
+  
+  }
+
    @media screen and (max-width: 1500px) {
    
 
@@ -800,11 +810,13 @@ aside {
     #geo-1 {
       position: absolute;
       bottom: -60px;
+
+     
     }
 
   #geo-14{
     bottom:0;
-    left: 80%;
+    left: 40%;
     transform: translate(-50%, -50%);
     height: 40px;
     width: 40px;
@@ -938,6 +950,10 @@ aside {
 
   .sestougao-blag-container {
     left: 45%;
+
+    @media screen and (max-width: 1600px) {
+    left: 55%;
+  }
   }
 }
 
@@ -1733,7 +1749,7 @@ aside {
   margin-right: auto;
   padding-bottom: 10px;
   margin-top: 250px;
-  overflow: visible;
+  overflow: hidden;
 
   #geo-20{
     left: 65%;
